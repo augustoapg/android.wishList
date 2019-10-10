@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Christmas Wish List</string>
+    <string name="lblTitle">Wish List</string>
+    <string name="btnAdd">ADD</string>
+</resources>

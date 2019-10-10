@@ -2,4 +2,11 @@
     <string name="app_name">Christmas Wish List</string>
     <string name="lblTitle">Wish List</string>
     <string name="btnAdd">ADD</string>
+    <string name="title_activity_add_desired_gift">Add Desired Gift</string>
+    <string name="lblWishGiftTitle">Add Desired Gift</string>
+    <string name="lblName">Name</string>
+    <string name="lblDescription">Description</string>
+    <string name="btnTakePicture">Take Picture</string>
+    <string name="btnSave">Save</string>
+    <string name="imgContentDesc">Click image to take picture</string>
 </resources>

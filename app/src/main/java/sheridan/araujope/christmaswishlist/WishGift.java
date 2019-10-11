@@ -1,3 +1,14 @@
+/**
+ * Project: Christmas Wish List
+ * Author: Augusto A P Goncalez
+ * Date: Oct. 11, 2019
+ *
+ * Project Description:
+ * This app allows the user to add gifts to a wish list. The gift contains a name, a description
+ * and a picture that the user can take using the device's camera. All the gift items are displayed
+ * in a RecyclerView in the main layout.
+ */
+
 package sheridan.araujope.christmaswishlist;
 
 import android.content.Intent;

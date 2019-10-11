@@ -7,10 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -60,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
                 String description = data.getStringExtra("description");
                 Bitmap image = (Bitmap)data.getParcelableExtra("image");
 
+                // if no image was sent, use default image
+                if (image == null) {
+                    image = BitmapFactory.decodeResource(this.getResources(),
+                            R.drawable.gift);
+                }
+
                 Log.d(TAG, "onActivityResult: " + name + " - " + description);
 
                 mNames.add(name);
@@ -67,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
                 mImages.add(image);
 
                 mAdapter.notifyItemInserted(mNames.size() - 1);
+
+                Toast toast = Toast.makeText(this,
+                        name + " has been added to the list =D", Toast.LENGTH_SHORT);
+                toast.show();
             }
         }
     }

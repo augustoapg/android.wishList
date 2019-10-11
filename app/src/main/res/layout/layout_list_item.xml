@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imgList"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:contentDescription="@string/img_list_contentDesc"
         tools:srcCompat="@tools:sample/avatars[2]" />
 
@@ -18,19 +18,21 @@
         android:id="@+id/txtListName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtListDesc"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
         android:layout_toEndOf="@+id/imgList"
-        android:textSize="@dimen/list_desc_size"
-        tools:text="@string/lblDescription" />
+        android:textSize="@dimen/list_name_size"
+        tools:text="Name" />
 
     <TextView
         android:id="@+id/txtListDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="5dp"
+        android:layout_below="@+id/txtListName"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5sp"
         android:layout_toEndOf="@+id/imgList"
-        android:textSize="@dimen/list_name_size"
-        tools:text="Name" />
+        android:textSize="@dimen/list_desc_size"
+        android:textStyle="italic"
+        tools:text="@string/lblDescription" />
+
 </RelativeLayout>

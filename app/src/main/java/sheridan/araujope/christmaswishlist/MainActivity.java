@@ -2,6 +2,7 @@ package sheridan.araujope.christmaswishlist;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -11,11 +12,20 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
     private Button mAddButton;
     private RecyclerView mWishList;
+    private RecyclerViewAdapter mAdapter;
     private static final int REQUEST_CODE = 1;
+
+    private ArrayList<Bitmap> mImages = new ArrayList<>();
+    private ArrayList<String> mNames = new ArrayList<>();
+    private ArrayList<String> mDescriptions = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, REQUEST_CODE);
             }
         });
+
+        mAdapter = new RecyclerViewAdapter(this, mImages, mNames,
+                mDescriptions);
+        mWishList.setAdapter(mAdapter);
+        mWishList.setLayoutManager(new LinearLayoutManager(this));
     }
 
     @Override
@@ -44,6 +59,14 @@ public class MainActivity extends AppCompatActivity {
                 String name = data.getStringExtra("name");
                 String description = data.getStringExtra("description");
                 Bitmap image = (Bitmap)data.getParcelableExtra("image");
+
+                Log.d(TAG, "onActivityResult: " + name + " - " + description);
+
+                mNames.add(name);
+                mDescriptions.add(description);
+                mImages.add(image);
+
+                mAdapter.notifyItemInserted(mNames.size() - 1);
             }
         }
     }

@@ -9,4 +9,5 @@
     <string name="btnTakePicture">Take Picture</string>
     <string name="btnSave">Save</string>
     <string name="imgContentDesc">Click image to take picture</string>
+    <string name="img_list_contentDesc">Gift list item image</string>
 </resources>
